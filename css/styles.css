@@ -36,6 +36,44 @@ body {
         radial-gradient(1000px 400px at 95% -15%, #ffe8c9 0%, transparent 48%),
         var(--bg);
     line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+body::before {
+    background-image:
+        radial-gradient(circle at 8% 20%, rgba(255, 255, 255, 0.9) 1px, transparent 2px),
+        radial-gradient(circle at 70% 35%, rgba(255, 255, 255, 0.85) 1px, transparent 2px),
+        radial-gradient(circle at 45% 80%, rgba(255, 182, 213, 0.75) 1px, transparent 2px),
+        radial-gradient(circle at 85% 65%, rgba(255, 214, 232, 0.8) 1px, transparent 2px);
+    background-size: 180px 180px, 220px 220px, 260px 260px, 300px 300px;
+    opacity: 0.45;
+    z-index: 0;
+    animation: particlesDrift 34s linear infinite;
+}
+
+body::after {
+    background:
+        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.45) 0%, transparent 48%),
+        radial-gradient(circle at 80% 0%, rgba(255, 224, 238, 0.5) 0%, transparent 52%);
+    mix-blend-mode: screen;
+    z-index: 0;
+    animation: particlesTwinkle 8s ease-in-out infinite alternate;
+}
+
+.site-header,
+main,
+.site-footer {
+    position: relative;
+    z-index: 1;
 }
 
 a {
@@ -105,6 +143,21 @@ img {
 
 .hero {
     padding: clamp(2rem, 5vw, 4rem) 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 999px;
+    right: 5%;
+    top: 8%;
+    background: radial-gradient(circle, rgba(255, 116, 172, 0.35), rgba(255, 116, 172, 0));
+    filter: blur(2px);
+    pointer-events: none;
+    animation: glowPulse 6s ease-in-out infinite;
 }
 
 .hero-small {
@@ -154,12 +207,40 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.45) 48%, transparent 85%);
+    transform: translateX(-140%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    transform: translateY(-2px);
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+    transform: translateX(140%);
 }
 
 .btn-primary {
     background: linear-gradient(135deg, var(--rose-700), var(--rose-500));
     color: #fff;
     box-shadow: 0 12px 24px rgba(191, 59, 120, 0.22);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    box-shadow: 0 16px 32px rgba(191, 59, 120, 0.32);
 }
 
 .btn-ghost {
@@ -172,6 +253,14 @@ img {
     border-radius: var(--radius-lg);
     border: 2px solid #f6c6de;
     box-shadow: var(--shadow);
+    animation: imageFloat 7s ease-in-out infinite;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.cover-image:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 24px 50px rgba(127, 29, 79, 0.2);
+    filter: saturate(1.05);
 }
 
 .fineprint {
@@ -207,6 +296,30 @@ h3 {
     border-radius: var(--radius-md);
     padding: 1.1rem;
     box-shadow: 0 10px 20px rgba(127, 29, 79, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -50% 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.55) 50%, transparent 70%);
+    transform: translateX(-135%) rotate(6deg);
+    opacity: 0;
+    transition: transform 0.7s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 30px rgba(127, 29, 79, 0.14);
+}
+
+.card:hover::before {
+    transform: translateX(135%) rotate(6deg);
+    opacity: 1;
 }
 
 .step {
@@ -316,6 +429,13 @@ textarea:focus {
     justify-self: center;
     border-radius: var(--radius-md);
     border: 2px solid #f6c6de;
+    animation: imageFloat 8s ease-in-out infinite;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pack-image:hover {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 0 18px 36px rgba(127, 29, 79, 0.22);
 }
 
 .cart-panel {
@@ -348,6 +468,13 @@ textarea:focus {
     padding: 0.25rem 0.65rem;
     font-weight: 700;
     cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.remove-btn:hover,
+.remove-btn:focus-visible {
+    transform: translateY(-1px);
+    background: #fff1f7;
 }
 
 .cart-empty {
@@ -379,6 +506,46 @@ textarea:focus {
     margin: 0.4rem 0 0;
     font-size: 0.85rem;
     color: #ddb7cc;
+}
+
+@keyframes particlesDrift {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-120px, -70px, 0);
+    }
+}
+
+@keyframes particlesTwinkle {
+    0% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes glowPulse {
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.65;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+@keyframes imageFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 @media (min-width: 780px) {
@@ -420,7 +587,9 @@ textarea:focus {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         transition: none !important;
         animation: none !important;
         scroll-behavior: auto !important;
