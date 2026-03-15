@@ -1,59 +1,58 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trust My Drink - Offres produits</title>
-    <meta name="description" content="Offres Trust My Drink : verre réutilisable + bandelettes consommables pour bars, festivals, boîtes et événements étudiants.">
+    <title>Trust My Drink - Packs et commande</title>
+    <meta name="description" content="Configurez vos packs de verres Trust My Drink et simulez une commande.">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="page-packs">
-    <nav class="navbar">
-        <div class="container nav-content">
+    <header class="site-header">
+        <div class="container nav-wrap">
             <a href="index.html" class="brand">Trust My Drink</a>
-            <div class="nav-links">
-                <a href="comment-ca-marche.html" class="nav-link">Comment ça marche</a>
-                <a href="professionnels.html" class="nav-link">Professionnels</a>
-                <a href="packs.html" class="btn btn-primary">Acheter</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container">
-            <h1>Offres produits</h1>
-            <p>
-                L'offre repose sur <span style="color: var(--color-primary-strong); font-weight: 700;">deux éléments</span> :
-                le <span style="color: var(--color-primary-strong); font-weight: 700;">verre Trust My Drink</span>
-                et les <span style="color: var(--color-primary-strong); font-weight: 700;">bandelettes détectrices</span>.
-                Les prix affichés sont fictifs et illustrent la logique de revenus récurrents.
-            </p>
+            <nav class="site-nav" aria-label="Navigation principale">
+                <a href="index.html">Accueil</a>
+                <a href="professionnels.html">Professionnels</a>
+                <a href="packs.html" class="cta-link active">Commander</a>
+            </nav>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container layout">
-            <div>
-                <div class="packs-grid">
+    <main>
+        <section class="hero hero-small">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Commande</p>
+                    <h1>Composez vos packs de verres securises.</h1>
+                    <p>Le systeme de commande reste identique: choix du volume, du materiau puis ajout au panier.</p>
+                </div>
+                <div class="hero-media">
+                    <img src="images/versionVerre.png" alt="Presentation des verres Trust My Drink" class="cover-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container order-layout">
+                <div class="packs-list">
                     <article class="card pack-card" data-qty="1" data-base-unit="10">
                         <div class="pack-content">
-                            <h3>Pack 1 <span style="color: var(--color-primary-strong);">verre réutilisable</span></h3>
-                            <p class="pack-sub">Base : 10,00 € (25 cl, plastique) + bandelettes de démarrage</p>
-                            <div class="options">
-                                <div>
-                                    <label for="volume-1">Volume</label>
+                            <h2>Pack 1 verre reutilisable</h2>
+                            <p class="pack-sub">Base: 10,00 EUR (25 cl, plastique) + bandelettes de demarrage.</p>
+                            <div class="options-grid">
+                                <label for="volume-1">Volume
                                     <select id="volume-1" name="volume">
                                         <option value="25cl">25 cl</option>
-                                        <option value="50cl">50 cl (+2 € / verre)</option>
+                                        <option value="50cl">50 cl (+2 EUR / verre)</option>
                                     </select>
-                                </div>
-                                <div>
-                                    <label for="material-1">Matériau</label>
+                                </label>
+                                <label for="material-1">Materiau
                                     <select id="material-1" name="material">
                                         <option value="plastique">Plastique</option>
-                                        <option value="verre">Verre (+3 € / verre)</option>
+                                        <option value="verre">Verre (+3 EUR / verre)</option>
                                     </select>
-                                </div>
+                                </label>
                             </div>
                             <div class="price-row">
                                 <span class="price" data-role="price"></span>
@@ -66,23 +65,21 @@
 
                     <article class="card pack-card" data-qty="5" data-base-unit="8">
                         <div class="pack-content">
-                            <h3>Pack 5 <span style="color: var(--color-primary-strong);">verres réutilisables</span></h3>
-                            <p class="pack-sub">Base : 40,00 € (25 cl, plastique) + bandelettes de lancement</p>
-                            <div class="options">
-                                <div>
-                                    <label for="volume-5">Volume</label>
+                            <h2>Pack 5 verres reutilisables</h2>
+                            <p class="pack-sub">Base: 40,00 EUR (25 cl, plastique) + bandelettes de lancement.</p>
+                            <div class="options-grid">
+                                <label for="volume-5">Volume
                                     <select id="volume-5" name="volume">
                                         <option value="25cl">25 cl</option>
-                                        <option value="50cl">50 cl (+2 € / verre)</option>
+                                        <option value="50cl">50 cl (+2 EUR / verre)</option>
                                     </select>
-                                </div>
-                                <div>
-                                    <label for="material-5">Matériau</label>
+                                </label>
+                                <label for="material-5">Materiau
                                     <select id="material-5" name="material">
                                         <option value="plastique">Plastique</option>
-                                        <option value="verre">Verre (+3 € / verre)</option>
+                                        <option value="verre">Verre (+3 EUR / verre)</option>
                                     </select>
-                                </div>
+                                </label>
                             </div>
                             <div class="price-row">
                                 <span class="price" data-role="price"></span>
@@ -95,23 +92,21 @@
 
                     <article class="card pack-card" data-qty="10" data-base-unit="7.5">
                         <div class="pack-content">
-                            <h3>Pack 10 <span style="color: var(--color-primary-strong);">verres réutilisables</span></h3>
-                            <p class="pack-sub">Base : 75,00 € (25 cl, plastique) + bandelettes pour premières rotations</p>
-                            <div class="options">
-                                <div>
-                                    <label for="volume-10">Volume</label>
+                            <h2>Pack 10 verres reutilisables</h2>
+                            <p class="pack-sub">Base: 75,00 EUR (25 cl, plastique) + bandelettes premieres rotations.</p>
+                            <div class="options-grid">
+                                <label for="volume-10">Volume
                                     <select id="volume-10" name="volume">
                                         <option value="25cl">25 cl</option>
-                                        <option value="50cl">50 cl (+2 € / verre)</option>
+                                        <option value="50cl">50 cl (+2 EUR / verre)</option>
                                     </select>
-                                </div>
-                                <div>
-                                    <label for="material-10">Matériau</label>
+                                </label>
+                                <label for="material-10">Materiau
                                     <select id="material-10" name="material">
                                         <option value="plastique">Plastique</option>
-                                        <option value="verre">Verre (+3 € / verre)</option>
+                                        <option value="verre">Verre (+3 EUR / verre)</option>
                                     </select>
-                                </div>
+                                </label>
                             </div>
                             <div class="price-row">
                                 <span class="price" data-role="price"></span>
@@ -124,23 +119,21 @@
 
                     <article class="card pack-card" data-qty="20" data-base-unit="7">
                         <div class="pack-content">
-                            <h3>Pack 20 <span style="color: var(--color-primary-strong);">verres réutilisables</span></h3>
-                            <p class="pack-sub">Base : 140,00 € (25 cl, plastique) + stock initial de bandelettes</p>
-                            <div class="options">
-                                <div>
-                                    <label for="volume-20">Volume</label>
+                            <h2>Pack 20 verres reutilisables</h2>
+                            <p class="pack-sub">Base: 140,00 EUR (25 cl, plastique) + stock initial de bandelettes.</p>
+                            <div class="options-grid">
+                                <label for="volume-20">Volume
                                     <select id="volume-20" name="volume">
                                         <option value="25cl">25 cl</option>
-                                        <option value="50cl">50 cl (+2 € / verre)</option>
+                                        <option value="50cl">50 cl (+2 EUR / verre)</option>
                                     </select>
-                                </div>
-                                <div>
-                                    <label for="material-20">Matériau</label>
+                                </label>
+                                <label for="material-20">Materiau
                                     <select id="material-20" name="material">
                                         <option value="plastique">Plastique</option>
-                                        <option value="verre">Verre (+3 € / verre)</option>
+                                        <option value="verre">Verre (+3 EUR / verre)</option>
                                     </select>
-                                </div>
+                                </label>
                             </div>
                             <div class="price-row">
                                 <span class="price" data-role="price"></span>
@@ -152,28 +145,28 @@
                     </article>
                 </div>
 
-                <div class="price-info price-info-block">
-                    <span style="color: var(--color-primary-strong); font-weight: 700;">Investissement initial sur les verres</span>,
-                    puis réapprovisionnement en bandelettes consommables non réutilisables.
-                    Surcoûts fictifs inchangés : +2 € / verre pour 50 cl et +3 € / verre pour la version verre.
-                </div>
+                <aside class="card cart-panel">
+                    <h2>Panier</h2>
+                    <ul id="cart-items" class="cart-list"></ul>
+                    <div class="cart-total">
+                        <span>Total</span>
+                        <span id="cart-total">0,00 EUR</span>
+                    </div>
+                    <p class="pack-sub">Simulation de commande B2B.</p>
+                </aside>
             </div>
+        </section>
+    </main>
 
-            <aside class="card cart">
-                <h2>Panier</h2>
-                <ul id="cart-items" class="cart-list"></ul>
-                <div class="cart-total">
-                    <span>Total</span>
-                    <span id="cart-total">0,00 €</span>
-                </div>
-                <p class="cart-note">Simulation de commande B2B, démonstration uniquement.</p>
-            </aside>
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p class="footer-brand">Trust My Drink</p>
+            <p>Solutions professionnelles de prevention en milieu festif.</p>
+            <a href="mailto:hello@trustmydrink.fr" class="btn btn-primary">hello@trustmydrink.fr</a>
+            <p class="copyright">© 2026 Trust My Drink. Tous droits reserves.</p>
         </div>
-    </section>
-
-    <footer>
-        © 2023 Trust My Drink Concept. Tous droits réservés.
     </footer>
+
     <script src="js/scripts.js"></script>
 </body>
 </html>

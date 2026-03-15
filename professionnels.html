@@ -1,130 +1,108 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trust My Drink - Professionnels</title>
-    <meta name="description" content="Solution Trust My Drink pour bars, festivals, boîtes et événements étudiants : sécurité intégrée et modèle récurrent.">
+    <title>Trust My Drink - Offre professionnels</title>
+    <meta name="description" content="Solution Trust My Drink pour bars, boites, festivals et associations etudiantes.">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="page-professionnels">
-    <nav class="navbar">
-        <div class="container nav-content">
+<body class="page-pro">
+    <header class="site-header">
+        <div class="container nav-wrap">
             <a href="index.html" class="brand">Trust My Drink</a>
-            <div class="nav-links">
-                <a href="comment-ca-marche.html" class="nav-link">Comment ça marche</a>
-                <a href="professionnels.html" class="nav-link">Professionnels</a>
-                <a href="packs.html" class="btn btn-primary">Acheter</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <div class="container">
-            <h1>Pour bars, festivals et boîtes</h1>
-            <p>
-                Une solution concrète pour améliorer la sécurité perçue et réelle,
-                tout en conservant les opérations habituelles de service.
-            </p>
+            <nav class="site-nav" aria-label="Navigation principale">
+                <a href="index.html">Accueil</a>
+                <a href="professionnels.html" class="active">Professionnels</a>
+                <a href="packs.html" class="cta-link">Commander</a>
+            </nav>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container layout">
-            <div class="card">
-                <h2>Pourquoi déployer Trust My Drink</h2>
-                <p>Bénéfices directs pour les établissements et organisateurs d'événements étudiants.</p>
-                <ul class="contact-list">
-                    <li class="contact-item">
-                        <strong>Image sécurité renforcée</strong>
-                        <span>Rassure les clients avec une prévention visible et crédible.</span>
-                    </li>
-                    <li class="contact-item">
-                        <strong>Réduction des incidents</strong>
-                        <span>Ajoute une couche de protection au moment même de la consommation.</span>
-                    </li>
-                    <li class="contact-item">
-                        <strong>Différenciation marketing</strong>
-                        <span>Positionne le lieu comme innovant et responsable.</span>
-                    </li>
-                    <li class="contact-item">
-                        <strong>Protection juridique</strong>
-                        <span>Renforce une démarche active de gestion du risque.</span>
-                    </li>
-                    <li class="contact-item">
-                        <strong>Distribution simple</strong>
-                        <span>Approvisionnement via grossistes et distributeurs boissons existants.</span>
-                    </li>
-                </ul>
-                <div class="note">
-                    Modèle économique : verres réutilisables + bandelettes consommables à renouveler régulièrement.
+    <main>
+        <section class="hero hero-small">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">B2B</p>
+                    <h1>Une prevention concrete pour vos equipes et vos clients.</h1>
+                    <p>
+                        Bars, boites de nuit, festivals et BDE peuvent deployer une solution simple,
+                        visible et compatible avec le service habituel.
+                    </p>
+                </div>
+                <div class="hero-media">
+                    <img src="images/FondFestival.png" alt="Public en festival" class="cover-image">
                 </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h2>Demander un devis</h2>
-                <p>Partagez vos volumes et votre contexte pour construire un déploiement adapté.</p>
-                <form>
-                    <div class="two-col">
-                        <div>
-                            <label for="prenom">Prénom</label>
-                            <input id="prenom" name="prenom" type="text" placeholder="Camille">
-                        </div>
-                        <div>
-                            <label for="nom">Nom</label>
-                            <input id="nom" name="nom" type="text" placeholder="Durand">
-                        </div>
-                    </div>
-                    <div class="two-col">
-                        <div>
-                            <label for="entreprise">Établissement</label>
-                            <input id="entreprise" name="entreprise" type="text" placeholder="Club Horizon">
-                        </div>
-                        <div>
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" placeholder="contact@exemple.fr">
-                        </div>
-                    </div>
-                    <div class="two-col">
-                        <div>
-                            <label for="telephone">Téléphone</label>
-                            <input id="telephone" name="telephone" type="tel" placeholder="06 00 00 00 00">
-                        </div>
-                        <div>
-                            <label for="quantite">Volume mensuel estimé</label>
-                            <input id="quantite" name="quantite" type="text" placeholder="Ex: 500, 2 000, 10 000 verres">
-                        </div>
-                    </div>
-                    <div class="two-col">
-                        <div>
-                            <label for="volume">Format principal</label>
-                            <select id="volume" name="volume">
-                                <option value="25cl">25 cl</option>
-                                <option value="50cl">50 cl</option>
-                                <option value="mixte">Mixte</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="materiau">Type de verre</label>
-                            <select id="materiau" name="materiau">
-                                <option value="plastique">Plastique</option>
-                                <option value="verre">Verre</option>
-                                <option value="mixte">Mixte</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Type de lieu, capacité, dates, objectifs sécurité, etc."></textarea>
-                    </div>
-                    <button class="btn btn-primary" type="button">Envoyer la demande</button>
-                </form>
+        <section class="section">
+            <div class="container cards two-col">
+                <article class="card">
+                    <h2>Benefices etablissements</h2>
+                    <ul class="list-clean">
+                        <li>Renforcer la perception de securite du lieu.</li>
+                        <li>Ajouter une couche de prevention au moment de consommation.</li>
+                        <li>Differencier votre marque avec une mesure tangible.</li>
+                        <li>Structurer une demarche active de reduction des risques.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2>Modele de deploiement</h2>
+                    <ul class="list-clean">
+                        <li>Verres reutilisables Trust My Drink.</li>
+                        <li>Bandelettes consommables a renouveler regulierement.</li>
+                        <li>Approvisionnement progressif selon volume du site.</li>
+                        <li>Possibilite de pilote avant generalisation.</li>
+                    </ul>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        © 2023 Trust My Drink Concept. Tous droits réservés.
+        <section class="section soft-bg">
+            <div class="container">
+                <article class="card form-card">
+                    <h2>Demander un devis</h2>
+                    <p>Partagez votre contexte. Nous revenons avec une proposition de volume et de cadence.</p>
+                    <form>
+                        <div class="form-grid">
+                            <label>Prenom
+                                <input type="text" name="prenom" placeholder="Camille">
+                            </label>
+                            <label>Nom
+                                <input type="text" name="nom" placeholder="Durand">
+                            </label>
+                            <label>Etablissement
+                                <input type="text" name="etablissement" placeholder="Club Horizon">
+                            </label>
+                            <label>Email
+                                <input type="email" name="email" placeholder="contact@exemple.fr">
+                            </label>
+                            <label>Telephone
+                                <input type="tel" name="telephone" placeholder="06 00 00 00 00">
+                            </label>
+                            <label>Volume mensuel estime
+                                <input type="text" name="volume_mensuel" placeholder="Ex: 500 ou 2000 verres">
+                            </label>
+                        </div>
+                        <label>Message
+                            <textarea name="message" rows="5" placeholder="Type de lieu, capacite, objectifs, calendrier."></textarea>
+                        </label>
+                        <button type="button" class="btn btn-primary">Envoyer la demande</button>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p class="footer-brand">Trust My Drink</p>
+            <p>Solutions professionnelles de prevention en milieu festif.</p>
+            <a href="mailto:hello@trustmydrink.fr" class="btn btn-primary">hello@trustmydrink.fr</a>
+            <p class="copyright">© 2026 Trust My Drink. Tous droits reserves.</p>
+        </div>
     </footer>
 </body>
 </html>
