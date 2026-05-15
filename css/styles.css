@@ -1494,3 +1494,218 @@ body.page-site .footer-contact-btn { margin-bottom: var(--spacing-md); }
 body.page-site .footer-label { color: #94a3b8; margin-bottom: 0.5rem; }
 body.page-site .footer-meta { margin-top: var(--spacing-lg); font-size: 0.8rem; color: #475569; }
 body.page-packs .price-info-block { margin-top: var(--spacing-md); }
+
+/* ===== TRUST BAR ===== */
+.trust-bar {
+    background: #1e0a2e;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.trust-bar-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.trust-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-accent);
+}
+
+.trust-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.trust-sep {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== CONTEXTS SECTION ===== */
+.contexts-section {
+    background: var(--color-bg);
+    padding: 4rem 0;
+}
+
+.contexts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.context-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    background: white;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.context-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.context-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.context-label {
+    padding: 1.5rem;
+}
+
+/* ===== SAFE PLACE SECTION ===== */
+.safe-place-section {
+    background: linear-gradient(135deg, #1a0a2a 0%, #2a1a3a 100%);
+    color: white;
+    padding: 5rem 0;
+}
+
+.safe-place-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.safe-place-section h2 {
+    color: white;
+    text-align: left;
+}
+
+.safe-place-section p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.safe-place-img {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 440px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== STRIPS SECTION ===== */
+.strips-section {
+    background: #fffafc;
+    padding: 4rem 0;
+}
+
+.strips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.strip-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.strip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.strip-popular {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-soft);
+}
+
+.strip-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 9999px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.strip-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary-strong);
+    display: block;
+    margin: 0.75rem 0 0.25rem;
+}
+
+.strip-unit {
+    font-size: 0.85rem;
+    color: var(--color-ink-muted);
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+.strip-add-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ===== RESPONSIVE — new sections ===== */
+@media (max-width: 900px) {
+    .contexts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .safe-place-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .safe-place-section h2 {
+        text-align: center;
+    }
+
+    .safe-place-img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .strips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-sep {
+        display: none;
+    }
+
+    .trust-bar-inner {
+        gap: 0.75rem 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body.page-professionnels .hero .container,
+    body.page-professionnels header.hero .container {
+        grid-template-columns: 1fr !important;
+    }
+}
