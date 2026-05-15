@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrustMyDrink — Présentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:   #E8407A;
+      --purple: #7C3AED;
+      --violet: #4C1D95;
+      --dark:   #0D0A1A;
+      --darker: #07050F;
+      --light:  #F8F4FF;
+      --muted:  #A89BC2;
+      --glass:  rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--darker);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV DOTS ─────────────────────────────────────────── */
+    .nav-dots {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav-dots a {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      display: block;
+      transition: background .3s, transform .3s;
+    }
+    .nav-dots a:hover { background: var(--pink); transform: scale(1.4); }
+
+    /* ─── SLIDE BASE ────────────────────────────────────────── */
+    .slide {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 60px;
+    }
+
+    /* decorative blob */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    /* ─── SLIDE 1 — COVER ───────────────────────────────────── */
+    #slide-1 {
+      background: linear-gradient(135deg, #0D0A1A 0%, #1A0D2E 100%);
+      flex-direction: column;
+      text-align: center;
+      gap: 0;
+    }
+    #slide-1 .blob-1 { width:600px; height:600px; background:var(--purple); top:-150px; left:-150px; }
+    #slide-1 .blob-2 { width:500px; height:500px; background:var(--pink);   bottom:-100px; right:-100px; }
+
+    .cover-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .cover-logo {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--pink);
+      border: 1.5px solid var(--pink);
+      padding: 6px 18px;
+      border-radius: 40px;
+    }
+    .cover-group {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+
+    .cover-hero {
+      position: relative;
+      z-index: 2;
+    }
+    .cover-hero h1 {
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -.03em;
+    }
+    .cover-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cover-hero p {
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .cover-image-wrap {
+      margin-top: 52px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(124,58,237,.45), 0 0 0 1px var(--border);
+      max-width: 860px;
+      width: 100%;
+    }
+    .cover-image-wrap img { width: 100%; display: block; }
+
+    .cover-team {
+      margin-top: 36px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+
+    /* ─── SLIDE 2 — PROBLÈME ────────────────────────────────── */
+    #slide-2 {
+      background: linear-gradient(160deg, #0D0A1A 0%, #120818 100%);
+    }
+    #slide-2 .blob-1 { width:400px; height:400px; background:var(--pink); top:0; right:0; opacity:.2; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 20px;
+    }
+    .section-label.purple { color: #A78BFA; }
+
+    .slide-title {
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.025em;
+      margin-bottom: 28px;
+    }
+    .slide-body {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .stat-row {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .stat-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .stat-icon {
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .stat-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--light);
+      margin-bottom: 6px;
+    }
+    .stat-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ─── SLIDE 3 — SOLUTION ────────────────────────────────── */
+    #slide-3 {
+      background: linear-gradient(160deg, #0D0A1A 0%, #12081C 100%);
+    }
+    #slide-3 .blob-1 { width:500px; height:500px; background:var(--purple); bottom:-100px; left:-100px; opacity:.3; }
+
+    .solution-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 72px;
+      max-width: 1100px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .feature-list .check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .feature-list strong { color: var(--light); }
+
+    .product-visual {
+      background: linear-gradient(145deg, #1A0D2E, #0D0A1A);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: 0 20px 80px rgba(124,58,237,.25);
+    }
+    .product-visual .glass-emoji { font-size: 80px; display: block; margin-bottom: 20px; }
+    .product-visual h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .product-visual p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+    .badge.pink   { color: var(--pink);   border-color: var(--pink);   background: rgba(232,64,122,.08); }
+    .badge.purple { color: #A78BFA; border-color: #7C3AED; background: rgba(124,58,237,.10); }
+    .badge.teal   { color: #34D399; border-color: #34D399; background: rgba(52,211,153,.08); }
+
+    /* ─── SLIDE 4 — MARCHÉ ──────────────────────────────────── */
+    #slide-4 {
+      background: linear-gradient(160deg, #0D0A1A 0%, #0E1020 100%);
+    }
+    #slide-4 .blob-1 { width:400px; height:400px; background:var(--pink); top:-80px; right:100px; opacity:.18; }
+    #slide-4 .blob-2 { width:350px; height:350px; background:var(--purple); bottom:-60px; left:60px; opacity:.22; }
+
+    .market-layout {
+      max-width: 1100px;
+      width: 100%;
+    }
+    .market-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .market-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .market-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: transform .2s, border-color .2s;
+    }
+    .market-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--pink);
+    }
+    .market-card .icon { font-size: 36px; margin-bottom: 16px; display: block; }
+    .market-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .market-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .market-card .highlight {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--pink);
+      margin-top: 12px;
+      display: block;
+    }
+
+    /* ─── SLIDE 5 — BUSINESS MODEL ──────────────────────────── */
+    #slide-5 {
+      background: linear-gradient(160deg, #0D0A1A 0%, #12081C 100%);
+    }
+    #slide-5 .blob-1 { width:450px; height:450px; background:var(--purple); top:-80px; right:-80px; opacity:.25; }
+
+    .biz-layout {
+      max-width: 1100px;
+      width: 100%;
+    }
+    .biz-header { margin-bottom: 48px; }
+
+    .biz-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .pricing-table {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .pricing-table thead tr {
+      background: linear-gradient(90deg, rgba(232,64,122,.15), rgba(124,58,237,.15));
+    }
+    .pricing-table th, .pricing-table td {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 14px;
+    }
+    .pricing-table th {
+      font-weight: 600;
+      color: var(--light);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .pricing-table td { color: var(--muted); border-top: 1px solid var(--border); }
+    .pricing-table td:first-child { color: var(--light); font-weight: 500; }
+    .pricing-table .price { color: var(--pink); font-weight: 700; }
+    .pricing-table .margin { color: #34D399; font-weight: 600; }
+
+    .revenue-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .revenue-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+    .revenue-card .r-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .revenue-card .r-value {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .revenue-card .r-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ─── SLIDE 6 — ÉQUIPE / CTA ────────────────────────────── */
+    #slide-6 {
+      background: linear-gradient(160deg, #0D0A1A 0%, #1A0D2E 50%, #0D0A1A 100%);
+      flex-direction: column;
+      text-align: center;
+    }
+    #slide-6 .blob-1 { width:600px; height:600px; background:var(--pink); top:50%; left:50%; transform:translate(-50%,-50%); opacity:.12; }
+
+    .cta-content { position: relative; z-index: 2; max-width: 800px; }
+    .cta-content .cover-logo-big {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 28px;
+      display: block;
+    }
+    .cta-content h2 {
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      margin-bottom: 24px;
+    }
+    .cta-content p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 48px;
+    }
+
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .team-chip {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      color: var(--muted);
+    }
+    .team-chip span { color: var(--light); font-weight: 600; }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--purple));
+      border-radius: 2px;
+      margin: 40px auto;
+    }
+
+    /* ─── SLIDE NUMBER ──────────────────────────────────────── */
+    .slide-num {
+      position: absolute;
+      bottom: 32px;
+      left: 60px;
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: .1em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav dots -->
+  <nav class="nav-dots" aria-label="Navigation">
+    <a href="#slide-1" title="Accueil"></a>
+    <a href="#slide-2" title="Problème"></a>
+    <a href="#slide-3" title="Solution"></a>
+    <a href="#slide-4" title="Marché"></a>
+    <a href="#slide-5" title="Business Model"></a>
+    <a href="#slide-6" title="Équipe"></a>
+  </nav>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- SLIDE 1 – COVER                               -->
+  <!-- ────────────────────────────────────────────── -->
+  <section class="slide" id="slide-1">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="cover-hero">
+      <div class="cover-top">
+        <div class="cover-logo">Trust My Drink</div>
+        <div class="cover-group">Groupe 26</div>
+      </div>
+
+      <h1>Un verre qui<br/><em>pense pour toi.</em></h1>
+      <p>Détection instantanée de drogues dans votre boisson — réutilisable, discret, et conçu pour la nuit.</p>
+
+      <div class="cover-image-wrap">
+        <img src="presentation_image.png" alt="TrustMyDrink — verres anti-drogue" />
+      </div>
+
+      <div class="cover-team">
+        Anna Girard · Charlotte Boulle · Thomas Démon · Isaure Ponchon de Saint André · Jonathan Wyss · Lucas Berry
+      </div>
+    </div>
+
+    <span class="slide-num">01 / 06</span>
+  </section>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- SLIDE 2 – PROBLÈME                            -->
+  <!-- ────────────────────────────────────────────── -->
+  <section class="slide" id="slide-2">
+    <div class="blob blob-1"></div>
+
+    <div class="two-col">
+      <div>
+        <p class="section-label">Le problème</p>
+        <h2 class="slide-title">La nuit n'est pas aussi safe qu'elle devrait l'être.</h2>
+        <p class="slide-body">
+          Boîtes de nuit, bars, festivals&nbsp;: la soumission chimique progresse. Les victimes de drogues ajoutées dans les verres sont de plus en plus nombreuses. Les solutions existantes&nbsp;? Insuffisantes.
+        </p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <span class="stat-icon">🚫</span>
+          <div>
+            <h3>Couvercles de verre</h3>
+            <p>Protègent physiquement mais ne <strong>détectent rien</strong>. Inutiles si la drogue est ajoutée avant la remise du verre.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">⚗️</span>
+          <div>
+            <h3>Faux ongles / bandelettes nues</h3>
+            <p>Libèrent des <strong>substances toxiques</strong> dans le verre ou nécessitent une goutte prélevée — pas pratique en soirée.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🕐</span>
+          <div>
+            <h3>Tests urinaires</h3>
+            <p>Efficaces <strong>après coup</strong>, pas en temps réel. La réaction doit être immédiate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="slide-num">02 / 06</span>
+  </section>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- SLIDE 3 – SOLUTION                            -->
+  <!-- ────────────────────────────────────────────── -->
+  <section class="slide" id="slide-3">
+    <div class="blob blob-1"></div>
+
+    <div class="solution-layout">
+      <div>
+        <p class="section-label purple">Notre solution</p>
+        <h2 class="slide-title">Protection intégrée. Détection en temps réel.</h2>
+        <p class="slide-body">
+          TrustMyDrink intègre une bandelette chimique dans un rail incisé à l'intérieur du verre. Le liquide y entre par capillarité — sans contact avec votre boisson.
+        </p>
+
+        <ul class="feature-list">
+          <li>
+            <span class="check">✓</span>
+            <span><strong>Réutilisable :</strong> le verre se lave, seule la bandelette est jetée.</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span><strong>Instantané :</strong> résultat visible en quelques secondes, sans manipulation.</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span><strong>Sans contamination :</strong> la capsule plastique isole les réactifs chimiques de la boisson.</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span><strong>Discret :</strong> design pensé pour les festivités, semblable à un verre standard.</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span><strong>Écologique :</strong> verre recyclable, moins de déchets qu'un test jetable complet.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="product-visual">
+        <span class="glass-emoji">🥃</span>
+        <h3>Le verre TrustMyDrink</h3>
+        <p>Rail intégré + bandelette de détection encapsulée. Tester sa boisson devient un geste naturel.</p>
+
+        <div class="badge-row">
+          <span class="badge pink">Anti-drogue</span>
+          <span class="badge purple">Réutilisable</span>
+          <span class="badge teal">Eco-responsable</span>
+          <span class="badge pink">Instantané</span>
+          <span class="badge purple">B2C + B2B</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="slide-num">03 / 06</span>
+  </section>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- SLIDE 4 – MARCHÉ & STRATÉGIE                  -->
+  <!-- ────────────────────────────────────────────── -->
+  <section class="slide" id="slide-4">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="market-layout">
+      <div class="market-header">
+        <p class="section-label">Marché &amp; Distribution</p>
+        <h2 class="slide-title">Deux leviers, un marché massif.</h2>
+      </div>
+
+      <div class="market-cards">
+        <div class="market-card">
+          <span class="icon">🎉</span>
+          <h3>18–30 ans</h3>
+          <p>Cible principale via TikTok, Instagram et Facebook. Campagnes digitales redirigeant vers le site e-commerce et Amazon.</p>
+          <span class="highlight">→ Canal digital direct</span>
+        </div>
+        <div class="market-card">
+          <span class="icon">👪</span>
+          <h3>Parents</h3>
+          <p>Segment rassurant via presse et TV. Le verre devient un incontournable de protection familiale.</p>
+          <span class="highlight">→ Médias traditionnels</span>
+        </div>
+        <div class="market-card">
+          <span class="icon">🏢</span>
+          <h3>Professionnels</h3>
+          <p>Bars, boîtes de nuit, festivals. Intégration dans les catalogues de France Boissons, Tafanel, Le Petit Fournisseur.</p>
+          <span class="highlight">→ Distribution B2B massive</span>
+        </div>
+      </div>
+
+      <div style="margin-top:36px; text-align:center;">
+        <p style="font-size:15px; color:var(--muted); max-width:700px; margin:0 auto;">
+          Les établissements partenaires affichent le label <strong style="color:var(--light)">"Safe Place"</strong> — créant un climat de confiance immédiat et amplifiant notre présence physique.
+        </p>
+      </div>
+    </div>
+
+    <span class="slide-num">04 / 06</span>
+  </section>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- SLIDE 5 – BUSINESS MODEL                      -->
+  <!-- ────────────────────────────────────────────── -->
+  <section class="slide" id="slide-5">
+    <div class="blob blob-1"></div>
+
+    <div class="biz-layout">
+      <div class="biz-header">
+        <p class="section-label">Business Model</p>
+        <h2 class="slide-title">Un modèle rentable dès le premier verre.</h2>
+      </div>
+
+      <div class="biz-grid">
+        <div class="pricing-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Produit</th>
+                <th>Canal</th>
+                <th>Prix</th>
+                <th>Marge</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verre TrustMyDrink</td>
+                <td>Particuliers (B2C)</td>
+                <td class="price">5,00 €</td>
+                <td class="margin">~2,00 €</td>
+              </tr>
+              <tr>
+                <td>Verre TrustMyDrink</td>
+                <td>Grossistes (B2B)</td>
+                <td class="price">3–4 €</td>
+                <td class="margin">Volume</td>
+              </tr>
+              <tr>
+                <td>Pack 5 bandelettes</td>
+                <td>Recharge B2C</td>
+                <td class="price">6,00 €</td>
+                <td class="margin">Récurrent</td>
+              </tr>
+              <tr>
+                <td>Pack 10 bandelettes</td>
+                <td>Recharge B2C</td>
+                <td class="price">10,00 €</td>
+                <td class="margin">Récurrent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="revenue-cards">
+          <div class="revenue-card">
+            <div class="r-label">Coût de revient</div>
+            <div class="r-value">~3,00 €</div>
+            <div class="r-desc">Verre + encoche + bandelette incluse + packaging + logistique</div>
+          </div>
+          <div class="revenue-card">
+            <div class="r-label">Revenu récurrent</div>
+            <div class="r-value">Bandelettes</div>
+            <div class="r-desc">Les bandelettes sont consommables — chaque verre vendu génère des achats récurrents.</div>
+          </div>
+          <div class="revenue-card">
+            <div class="r-label">Avantage concurrentiel prix</div>
+            <div class="r-value">+1–3 €</div>
+            <div class="r-desc">Légèrement au-dessus des verres réutilisables classiques (2–4 €), justifié par la fonctionnalité de sécurité.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="slide-num">05 / 06</span>
+  </section>
+
+  <!-- ────────────────────────────────────────────── -->
+  <!-- SLIDE 6 – ÉQUIPE / CTA                        -->
+  <!-- ────────────────────────────────────────────── -->
+  <section class="slide" id="slide-6">
+    <div class="blob blob-1"></div>
+
+    <div class="cta-content">
+      <span class="cover-logo-big">Trust My Drink</span>
+      <h2>Ensemble,<br/>changeons les codes<br/><em style="background:linear-gradient(90deg,var(--pink),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">de la nuit.</em></h2>
+      <p>Un verre. Une bandelette. Une soirée en toute sécurité.<br/>TrustMyDrink rend la détection accessible à tous, partout.</p>
+
+      <div class="divider"></div>
+
+      <p style="font-size:13px; color:var(--muted); letter-spacing:.06em; margin-bottom:16px;">L'ÉQUIPE — GROUPE 26</p>
+      <div class="team-grid">
+        <div class="team-chip"><span>Anna</span> Girard</div>
+        <div class="team-chip"><span>Charlotte</span> Boulle</div>
+        <div class="team-chip"><span>Thomas</span> Démon</div>
+        <div class="team-chip"><span>Isaure</span> Ponchon de Saint André</div>
+        <div class="team-chip"><span>Jonathan</span> Wyss</div>
+        <div class="team-chip"><span>Lucas</span> Berry</div>
+      </div>
+    </div>
+
+    <span class="slide-num">06 / 06</span>
+  </section>
+
+</body>
+</html>
