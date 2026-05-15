@@ -117,8 +117,8 @@
         body.page-site .badge{
             display: inline-block;
             padding: 0.35rem 0.9rem;
-            background-color: #422457;
-            color: #ffe7b0;
+            background: linear-gradient(135deg, var(--color-primary-strong), var(--color-secondary));
+            color: #fff5b8;
             font-size: 0.72rem;
             font-weight: 800;
             border-radius: 9999px;
@@ -431,8 +431,8 @@
 
         /* --- FOOTER --- */
         body.page-site footer{
-            background: linear-gradient(170deg, #2a1630 0%, #120a1a 100%);
-            color: #e8d7e2;
+            background: linear-gradient(170deg, #7a1f4a 0%, #4d0f30 100%);
+            color: #ffe1ee;
             padding: var(--spacing-lg) 0;
             text-align: center;
         }
@@ -462,17 +462,17 @@
             align-items: center;
             justify-content: center;
             border-radius: 9999px;
-            background: #31153a;
+            background: rgba(255, 255, 255, 0.14);
             color: #fff5ff;
             text-decoration: none;
-            border: 1px solid #5d3c67;
+            border: 1px solid rgba(255, 255, 255, 0.28);
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
 
         body.page-site .social-btn:hover, body.page-site .social-btn:focus{
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
-            background: #4b2258;
+            background: rgba(255, 255, 255, 0.26);
         }
 
         body.page-site .social-btn svg{
@@ -1489,15 +1489,15 @@ body.page-site .benefits-section { background-color: #ffffff; }
 body.page-site .safety-warning { color: var(--color-warning-text); }
 body.page-site .safety-list-items { margin-left: 1.5rem; margin-top: 1rem; color: var(--color-text); }
 body.page-site .safety-list-item { margin-bottom: 0.5rem; }
-body.page-site .footer-intro { color: #64748b; }
+body.page-site .footer-intro { color: rgba(255, 255, 255, 0.82); }
 body.page-site .footer-contact-btn { margin-bottom: var(--spacing-md); }
-body.page-site .footer-label { color: #94a3b8; margin-bottom: 0.5rem; }
-body.page-site .footer-meta { margin-top: var(--spacing-lg); font-size: 0.8rem; color: #475569; }
+body.page-site .footer-label { color: var(--color-primary-soft); margin-bottom: 0.5rem; }
+body.page-site .footer-meta { margin-top: var(--spacing-lg); font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
 body.page-packs .price-info-block { margin-top: var(--spacing-md); }
 
 /* ===== TRUST BAR ===== */
 .trust-bar {
-    background: #1e0a2e;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     padding: 1.2rem;
     display: flex;
     justify-content: center;
@@ -1521,12 +1521,12 @@ body.page-packs .price-info-block { margin-top: var(--spacing-md); }
 .trust-number {
     font-size: 1.6rem;
     font-weight: 800;
-    color: var(--color-accent);
+    color: var(--color-highlight);
 }
 
 .trust-label {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.78);
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -1534,7 +1534,7 @@ body.page-packs .price-info-block { margin-top: var(--spacing-md); }
 .trust-sep {
     width: 1px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.28);
 }
 
 /* ===== CONTEXTS SECTION ===== */
@@ -1576,7 +1576,7 @@ body.page-packs .price-info-block { margin-top: var(--spacing-md); }
 
 /* ===== SAFE PLACE SECTION ===== */
 .safe-place-section {
-    background: linear-gradient(135deg, #1a0a2a 0%, #2a1a3a 100%);
+    background: linear-gradient(135deg, var(--color-primary-strong) 0%, var(--color-secondary) 100%);
     color: white;
     padding: 5rem 0;
 }
@@ -1588,13 +1588,13 @@ body.page-packs .price-info-block { margin-top: var(--spacing-md); }
     align-items: center;
 }
 
-.safe-place-section h2 {
-    color: white;
+body.page-site .safe-place-section h2 {
+    color: #ffffff;
     text-align: left;
 }
 
-.safe-place-section p {
-    color: rgba(255, 255, 255, 0.72);
+body.page-site .safe-place-section p {
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .safe-place-img {
